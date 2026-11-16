@@ -1,0 +1,23 @@
+name: My First Github Action Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print a message
+        run: echo "Hello from Github Actions!"
+
+      - name: Check files
+        run: ls -la
+
+      - name: Execute Javascript
+        run: node app.js
